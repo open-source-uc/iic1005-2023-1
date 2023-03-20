@@ -9,7 +9,7 @@ def is_prime(number):
     return prime
 
 
-def find_prime_number(lower=0, upper=10_000):
+def find_prime_number(lower=0, upper=5_000):
     "Obtiene el primer número primo entre lower y upper."
     prime_number = -1
     for i in range(lower, upper):
@@ -21,11 +21,13 @@ def find_prime_number(lower=0, upper=10_000):
 def find_first_n_prime_numbers(n: int):
     "Obtiene los primeros n números primos."
     prime_numbers = []
+    last_prime_number = 1
     while len(prime_numbers) < n:
-        prime_number = find_prime_number()
+        prime_number = find_prime_number(last_prime_number + 1)
+        last_prime_number = prime_number
         prime_numbers.append(prime_number)
     return prime_numbers
 
 
-n = int(input("How many prime numbers do you want? "))
+n = int(input("Cuántos números primos quieres? "))
 print(find_first_n_prime_numbers(n))
