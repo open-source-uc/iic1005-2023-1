@@ -1,0 +1,7 @@
+# Este archivo indica que archivos NO se incluyen en el repositorio
+
+# Carpeta de configuración de VSCode
+.vscode/ 
+
+# Archivos de solución
+*.solution.py
